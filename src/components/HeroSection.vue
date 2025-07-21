@@ -56,7 +56,9 @@ import girl from '../../assets/hero_girl.png';
 .hero-redesign-bg__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #fff 60%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0.2) 100%);
+  background:
+    linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 0%),
+    linear-gradient(90deg, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.55) 100%);
   z-index: 1;
 }
 .hero-redesign-bg__content {
