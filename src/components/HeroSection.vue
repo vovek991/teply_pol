@@ -1,35 +1,33 @@
 <template>
-  <section class="hero-redesign">
-    <div class="hero-redesign__content">
-      <div class="hero-redesign__left">
-        <div class="hero-redesign__subtitle">
+  <section class="hero-redesign-bg">
+    <div class="hero-redesign-bg__overlay"></div>
+    <div class="hero-redesign-bg__content">
+      <div class="hero-redesign-bg__left">
+        <div class="hero-redesign-bg__subtitle">
           МОНТАЖ <span>ВОДЯНОГО<br>ТЕПЛОГО ПОЛА</span> ПОД КЛЮЧ
         </div>
-        <div class="hero-redesign__title">
+        <div class="hero-redesign-bg__title">
           ПО ТЕХНОЛОГИИ <span>ENERGY<br> EFFICIENT ECONOMY*</span><br>ЗА 5 ДНЕЙ С ГАРАНТИЕЙ!
         </div>
-        <div class="hero-redesign__features">
-          <div class="hero-redesign__feature">
-            <img :src="feature1" alt="" class="hero-redesign__icon" />
-            <div class="hero-redesign__feature-text">Точный расчет<br>теплопотерь помещений</div>
+        <div class="hero-redesign-bg__features">
+          <div class="hero-redesign-bg__feature">
+            <img :src="feature1" alt="" class="hero-redesign-bg__icon" />
+            <div class="hero-redesign-bg__feature-text">Точный расчет<br>теплопотерь помещений</div>
           </div>
-          <div class="hero-redesign__feature">
-            <img :src="feature2" alt="" class="hero-redesign__icon" />
-            <div class="hero-redesign__feature-text">Надежное европейское<br>оборудование</div>
+          <div class="hero-redesign-bg__feature">
+            <img :src="feature2" alt="" class="hero-redesign-bg__icon" />
+            <div class="hero-redesign-bg__feature-text">Надежное европейское<br>оборудование</div>
           </div>
-          <div class="hero-redesign__feature">
-            <img :src="feature3" alt="" class="hero-redesign__icon" />
-            <div class="hero-redesign__feature-text">Профессиональный проект<br>и расширенная гарантия 3 года</div>
+          <div class="hero-redesign-bg__feature">
+            <img :src="feature3" alt="" class="hero-redesign-bg__icon" />
+            <div class="hero-redesign-bg__feature-text">Профессиональный проект<br>и расширенная гарантия 3 года</div>
           </div>
         </div>
-        <div class="hero-redesign__desc">
+        <div class="hero-redesign-bg__desc">
           <span>РАССЧИТАЕМ СТОИМОСТЬ</span> ВОДЯНОГО ТЕПЛОГО ПОЛА <span>С УЧЕТОМ ИНДИВИДУАЛЬНЫХ<br>ПАРАМЕТРОВ ОБЪЕКТА</span> В ТЕЧЕНИИ 24 ЧАСОВ!<br>
-          <span class="hero-redesign__desc-bold">ДЛЯ ЭТОГО ЗАПОЛНИТЕ ЗАЯВКУ<br>И ОТПРАВЬТЕ ЕЕ НАМ</span>
+          <span class="hero-redesign-bg__desc-bold">ДЛЯ ЭТОГО ЗАПОЛНИТЕ ЗАЯВКУ<br>И ОТПРАВЬТЕ ЕЕ НАМ</span>
         </div>
-        <button class="hero-redesign__button">РАССЧИТАТЬ СТОИМОСТЬ</button>
-      </div>
-      <div class="hero-redesign__right">
-        <img :src="girl" alt="Девушка" class="hero-redesign__girl" />
+        <button class="hero-redesign-bg__button">РАССЧИТАТЬ СТОИМОСТЬ</button>
       </div>
     </div>
   </section>
@@ -43,35 +41,45 @@ import girl from '../../assets/hero_girl.png';
 </script>
 
 <style scoped>
-.hero-redesign {
+.hero-redesign-bg {
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(180deg, #f7f7f7 60%, #e2e2e2 100%);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  background: url('../../assets/hero_girl.png') no-repeat right bottom;
+  background-size: cover;
+  background-position: 70% 80%;
+  overflow: hidden;
 }
-.hero-redesign__content {
+.hero-redesign-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #fff 60%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0.2) 100%);
+  z-index: 1;
+}
+.hero-redesign-bg__content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   max-width: 900px;
   min-height: 700px;
   padding: 32px 16px 32px 32px;
   box-sizing: border-box;
 }
-.hero-redesign__left {
+.hero-redesign-bg__left {
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  z-index: 2;
 }
-.hero-redesign__subtitle {
+.hero-redesign-bg__subtitle {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 16px;
   color: #232c36;
@@ -80,10 +88,10 @@ import girl from '../../assets/hero_girl.png';
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.hero-redesign__subtitle span {
+.hero-redesign-bg__subtitle span {
   font-weight: 700;
 }
-.hero-redesign__title {
+.hero-redesign-bg__title {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 28px;
   color: #b88e34;
@@ -92,27 +100,27 @@ import girl from '../../assets/hero_girl.png';
   line-height: 1.2;
   text-transform: uppercase;
 }
-.hero-redesign__title span {
+.hero-redesign-bg__title span {
   color: #b88e34;
   font-weight: 700;
 }
-.hero-redesign__features {
+.hero-redesign-bg__features {
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin-bottom: 24px;
 }
-.hero-redesign__feature {
+.hero-redesign-bg__feature {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
 }
-.hero-redesign__icon {
+.hero-redesign-bg__icon {
   width: 48px;
   height: 48px;
 }
-.hero-redesign__feature-text {
+.hero-redesign-bg__feature-text {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 16px;
   color: #232c36;
@@ -120,7 +128,7 @@ import girl from '../../assets/hero_girl.png';
   text-align: left;
   line-height: 1.2;
 }
-.hero-redesign__desc {
+.hero-redesign-bg__desc {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 14px;
   color: #fff;
@@ -132,17 +140,17 @@ import girl from '../../assets/hero_girl.png';
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   line-height: 1.4;
 }
-.hero-redesign__desc span {
+.hero-redesign-bg__desc span {
   font-weight: 700;
   color: #fff;
 }
-.hero-redesign__desc-bold {
+.hero-redesign-bg__desc-bold {
   display: block;
   font-weight: 700;
   color: #fff;
   margin-top: 6px;
 }
-.hero-redesign__button {
+.hero-redesign-bg__button {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -156,65 +164,37 @@ import girl from '../../assets/hero_girl.png';
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   transition: background 0.2s;
 }
-.hero-redesign__button:hover {
+.hero-redesign-bg__button:hover {
   background: #9b7300;
 }
-.hero-redesign__right {
-  flex: 1 1 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-width: 320px;
-  max-width: 380px;
-}
-.hero-redesign__girl {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-}
 @media (max-width: 900px) {
-  .hero-redesign__content {
+  .hero-redesign-bg__content {
     flex-direction: column;
     align-items: center;
     min-height: unset;
     padding: 16px 4px;
   }
-  .hero-redesign__right {
-    max-width: 100vw;
-    min-width: 0;
-    margin-top: 24px;
-    justify-content: center;
-  }
-  .hero-redesign__girl {
-    max-width: 320px;
-  }
 }
 @media (max-width: 600px) {
-  .hero-redesign__content {
+  .hero-redesign-bg__content {
     padding: 8px 0;
   }
-  .hero-redesign__left {
+  .hero-redesign-bg__left {
     padding: 0 4px;
   }
-  .hero-redesign__title {
+  .hero-redesign-bg__title {
     font-size: 18px;
   }
-  .hero-redesign__feature-text {
+  .hero-redesign-bg__feature-text {
     font-size: 13px;
   }
-  .hero-redesign__desc {
+  .hero-redesign-bg__desc {
     font-size: 12px;
     padding: 10px 8px;
   }
-  .hero-redesign__button {
+  .hero-redesign-bg__button {
     font-size: 14px;
     padding: 10px 16px;
-  }
-  .hero-redesign__girl {
-    max-width: 220px;
   }
 }
 </style> 
