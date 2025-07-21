@@ -1116,3 +1116,25 @@ html, body {
     width: 100%;
   }
 } 
+
+@media (max-width: 768px) {
+  .header__contacts {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+  .header__contact-info {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header__phones {
+    justify-content: center;
+    margin-right: 0;
+  }
+  .header__schedule {
+    justify-content: center;
+  }
+} 
