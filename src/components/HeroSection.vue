@@ -53,14 +53,7 @@ import girl from '../../assets/hero_girl.png';
   background-position: 70% 80%;
   overflow: hidden;
 }
-.hero-redesign-bg__overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 0%),
-    linear-gradient(90deg, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.55) 100%);
-  z-index: 1;
-}
+
 .hero-redesign-bg__content {
   position: relative;
   z-index: 2;
@@ -95,12 +88,13 @@ import girl from '../../assets/hero_girl.png';
 }
 .hero-redesign-bg__title {
   font-family: 'PT Sans Narrow', sans-serif;
-  font-size: 28px;
-  color: #b88e34;
-  font-weight: 700;
-  margin-bottom: 28px;
+  font-size: 36px;
+  color: #FFC94D;
+  font-weight: 900;
+  margin-bottom: 32px;
   line-height: 1.2;
   text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.18);
 }
 .hero-redesign-bg__title span {
   color: #b88e34;
@@ -132,23 +126,24 @@ import girl from '../../assets/hero_girl.png';
 }
 .hero-redesign-bg__desc {
   font-family: 'PT Sans Narrow', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
-  background: linear-gradient(90deg, #b88e34 0%, #b88e34cc 100%);
+  background: linear-gradient(90deg, rgba(30,30,30,0.55) 0%, rgba(30,30,30,0.35) 100%);
   border-radius: 8px;
-  padding: 16px 18px;
+  padding: 18px 22px;
   margin-bottom: 18px;
   margin-top: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  line-height: 1.4;
+  line-height: 1.5;
+  font-weight: 700;
 }
 .hero-redesign-bg__desc span {
-  font-weight: 700;
+  font-weight: 900;
   color: #fff;
 }
 .hero-redesign-bg__desc-bold {
   display: block;
-  font-weight: 700;
+  font-weight: 900;
   color: #fff;
   margin-top: 6px;
 }
@@ -185,14 +180,14 @@ import girl from '../../assets/hero_girl.png';
     padding: 0 4px;
   }
   .hero-redesign-bg__title {
-    font-size: 18px;
+    font-size: 22px;
   }
   .hero-redesign-bg__feature-text {
     font-size: 13px;
   }
   .hero-redesign-bg__desc {
-    font-size: 12px;
-    padding: 10px 8px;
+    font-size: 15px;
+    padding: 12px 8px;
   }
   .hero-redesign-bg__button {
     font-size: 14px;
