@@ -62,7 +62,16 @@ html, body {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .header__container {
+    justify-content: flex-start;
+  }
 }
 
 .nav__menu {
@@ -171,8 +180,8 @@ html, body {
     text-decoration: none;
     font-size: 15px;
     letter-spacing: 0.5px;
-    white-space: nowrap;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
 .text__subtitle {
@@ -190,8 +199,8 @@ html, body {
 .header__contacts {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 5px;
+    align-items: stretch;
+    gap: 0;
 }
 
 .header__location {
@@ -214,6 +223,7 @@ html, body {
 .headphones_img {
     width: 24px;
     height: 20px;
+    filter: brightness(0) saturate(100%) invert(83%) sepia(31%) saturate(638%) hue-rotate(359deg) brightness(103%) contrast(107%);
 }
 
 .header__contact-info {
@@ -665,7 +675,8 @@ html, body {
     padding: 30px;
     display: flex;
     gap: 30px;
-    margin: 0 50px;
+    margin: 0 auto;
+    max-width: calc(100% - 100px);
 }
 
 .calculator__info {
@@ -906,7 +917,8 @@ html, body {
     .calculator__form {
         flex-direction: column;
         gap: 16px;
-        margin: 0 5px;
+        margin: 0 auto;
+        max-width: calc(100% - 10px);
         padding: 16px;
     }
     .calculator__options {
@@ -944,6 +956,8 @@ html, body {
         padding: 0 4px;
     }
     .calculator__form {
+        margin: 0 auto;
+        max-width: calc(100% - 8px);
         padding: 8px;
     }
     .calculator__options {
@@ -970,36 +984,8 @@ html, body {
     }
 } 
 
-/* --- Бургер-меню и выпадающее меню --- */
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  margin-left: 8px;
-}
-.burger span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #fff;
-  border-radius: 2px;
-  margin: 4px 0;
-  transition: 0.3s;
-}
+
 @media (max-width: 768px) {
-  .burger {
-    display: flex;
-    position: absolute;
-    top: 18px;
-    right: 16px;
-    left: auto;
-  }
   .nav__menu {
     display: none;
   }
@@ -1136,5 +1122,503 @@ html, body {
   }
   .header__schedule {
     justify-content: center;
+  }
+} 
+
+.header__contact-row-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.header__call-btn {
+  width: 180px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .header__contact-row-boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .header__call-btn {
+    display: none;
+  }
+  
+  .burger {
+    position: absolute;
+    left: 16px;
+    z-index: 10;
+  }
+} 
+
+.header__phones, .header__schedule {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  } 
+
+.logo__phones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+.logo__phones .headphones_img {
+  width: 20px;
+  height: 20px;
+}
+.logo__phones div {
+  display: flex;
+  flex-direction: column;
+}
+.logo__phones a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #fafafa;
+  line-height: 1.2;
+}
+.logo__phones .tel__2 {
+  color: #c9cccf;
+}
+@media (max-width: 768px) {
+  .logo__phones {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+} 
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .logo-block {
+    min-width: unset;
+    margin-right: 10px;
+    margin-left: 60px;
+    margin-right: auto;
+  }
+  
+  .headphones_img {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+} 
+
+.header-center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 320px;
+}
+.logo__text__2 {
+  align-items: center;
+  text-align: center;
+}
+.header__schedule-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+  gap: 4px;
+}
+.header__schedule-center span {
+  color: #c9cccf;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+.header__schedule-center a {
+  color: #fafafa;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+@media (max-width: 900px) {
+  .header-center-block {
+    min-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .header-center-block {
+    min-width: unset;
+    padding: 0 10px;
+  }
+} 
+
+.logo__info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 18px;
+  gap: 10px;
+}
+.logo__text__2 {
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 10px;
+}
+.header__schedule-center {
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .logo__info-block {
+    margin-top: 10px;
+    gap: 6px;
+  }
+  .logo__text__2 {
+    margin-top: 6px;
+  }
+  .header__schedule-center {
+    margin-top: 6px;
+  }
+} 
+
+.header-flex-block {
+display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+}
+.header-info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 260px;
+  margin-top: 0;
+  position: relative;
+}
+
+
+@media (max-width: 900px) {
+  .header-flex-block {
+    gap: 24px;
+  }
+  .header-info-block {
+    min-width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .header-flex-block {
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .logo__info-block {
+    margin-top: 0;
+  }
+  .header-info-block {
+    align-items: flex-start;
+  }
+  .header-info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 120px;
+  }
+  .header-info-top {
+    margin-bottom: auto;
+  }
+  .header-info-bottom {
+    margin-top: auto;
+  }
+} 
+
+/* --- Кнопка меню --- */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #B8860B;
+  border-radius: 2px;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* --- Выпадающее меню --- */
+.dropdown-menu {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #222c36;
+  z-index: 3000;
+  transition: top 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.dropdown-menu--open {
+  top: 0;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.dropdown-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu__close {
+  background: none;
+  border: none;
+  color: #B8860B;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.dropdown-menu__logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.dropdown-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
+  flex: 1;
+}
+
+.dropdown-menu__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.dropdown-menu__link:hover {
+  color: #B8860B;
+}
+
+.dropdown-menu__link--active {
+  color: #B8860B;
+}
+
+.dropdown-menu__link--active::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: #B8860B;
+}
+
+.dropdown-menu__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  min-height: 120px;
+}
+
+.dropdown-menu__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.dropdown-menu__icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(31%) saturate(638%) hue-rotate(359deg) brightness(103%) contrast(107%);
+}
+
+.dropdown-menu__call-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: "PT Sans Narrow", sans-serif;
+  width: 140px;
+  height: 36px;
+  font-size: 12px;
+  padding: 8px 12px;
+} 
+
+/* ПК версия шапки */
+@media (min-width: 769px) {
+  /* Скрываем мобильные элементы на ПК */
+  .burger {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+  }
+  
+  .headphones_img {
+    display: none;
+  }
+  
+  /* ПК навигация */
+  .header-pc-nav {
+    display: flex;
+    gap: 40px;
+    margin-left: 40px;
+  }
+  
+  .header-pc-nav__link {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  
+  .header-pc-nav__link:hover {
+    color: #B8860B;
+  }
+  
+  .header-pc-nav__link--active {
+    color: #B8860B;
+  }
+  
+  /* ПК контакты */
+  .header-pc-contacts {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+  }
+  
+  .header-pc-contacts__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-pc-contacts__icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(83%) sepia(31%) saturate(638%) hue-rotate(359deg) brightness(103%) contrast(107%);
+  }
+  
+  .header-pc-contacts__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .header-pc-contacts__schedule,
+  .header-pc-contacts__email,
+  .header-pc-contacts__phone {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 14px;
+    color: #c9cccf;
+    white-space: nowrap;
+  }
+  
+  .header-pc-contacts__phone {
+    color: white;
+    font-weight: 700;
+  }
+}
+
+/* Скрываем ПК элементы на мобильных */
+@media (max-width: 768px) {
+  .header-pc-nav {
+    display: none;
+  }
+  
+  .header-pc-contacts {
+    display: none;
+  }
+} 
+
+/* Адаптивные стили для ПК версии */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .header-pc-nav {
+    gap: 30px;
+    margin-left: 30px;
+  }
+  
+  .header-pc-nav__link {
+    font-size: 14px;
+  }
+  
+  .header-pc-contacts {
+    gap: 20px;
+  }
+  
+  .header-pc-contacts__schedule,
+  .header-pc-contacts__email,
+  .header-pc-contacts__phone {
+    font-size: 13px;
+  }
+  
+  .header__call-btn {
+    width: 160px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .header-pc-nav {
+    gap: 50px;
+    margin-left: 50px;
+  }
+  
+  .header-pc-contacts {
+    gap: 40px;
   }
 } 
