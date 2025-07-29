@@ -7,7 +7,7 @@
           МОНТАЖ <span>ВОДЯНОГО<br>ТЕПЛОГО ПОЛА</span> ПОД КЛЮЧ
         </div>
         <div class="hero-redesign-bg__title">
-          ПО ТЕХНОЛОГИИ <span>ENERGY<br> EFFICIENT ECONOMY*</span><br>ЗА 5 ДНЕЙ С ГАРАНТИЕЙ!
+          ПО ТЕХНОЛОГИИ ENERGY EFFICIENT ECONOMY*<br>ЗА 5 ДНЕЙ С ГАРАНТИЕЙ!
         </div>
         <div class="hero-redesign-bg__features">
           <div class="hero-redesign-bg__feature">
@@ -95,10 +95,6 @@ import girl from '../../assets/hero_girl.png';
   line-height: 1.2;
   text-transform: uppercase;
   text-shadow: 0 1px 2px rgba(0,0,0,0.18);
-}
-.hero-redesign-bg__title span {
-  color: #b88e34;
-  font-weight: 700;
 }
 .hero-redesign-bg__features {
   display: flex;
